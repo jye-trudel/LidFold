@@ -1,11 +1,11 @@
 #!/bin/zsh
 # Creates a stable, self-signed code-signing identity in a project-local keychain
-# (.signing/lidfold.keychain-db) — your login keychain is not touched.
+# (~/Library/Application Support/LidFold/lidfold.keychain-db) — your login keychain is not touched.
 # Why: macOS ties the Screen Recording permission to the app's signature. Ad-hoc signatures
 # change on every build, so the permission would be lost after each rebuild.
 set -euo pipefail
 cd "${0:A:h}/.."
-DIR=.signing; KC="$PWD/$DIR/lidfold.keychain-db"; PASS=lidfold
+DIR="$HOME/Library/Application Support/LidFold"; KC="$DIR/lidfold.keychain-db"; PASS=lidfold   # outside the project
 [[ -f "$KC" ]] && { echo "Identity already exists: $KC"; exit 0; }
 mkdir -p "$DIR"; cd "$DIR"
 cat > cert.cnf <<'CNF'

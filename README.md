@@ -40,7 +40,7 @@ macOS ties that permission to the app's code signature. Create a stable local si
 once, so the permission survives rebuilds:
 
 ```sh
-scripts/make-signing-identity.sh   # creates .signing/lidfold.keychain-db; your login keychain is not touched
+scripts/make-signing-identity.sh   # creates ~/Library/Application Support/LidFold/lidfold.keychain-db; your login keychain is not touched
 ./build.sh                         # now signs with "LidFold Local Signing"
 ```
 
