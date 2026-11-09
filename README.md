@@ -245,3 +245,12 @@ sharp desktop around its edges.
     missing in a future macOS, the lock-screen effect is skipped and nothing crashes.
   - **Tuning:** `defaults write local.lidfold lockSpaceLevel -int 400` sets the space level.
   - If the Mac wakes unlocked, the cover is removed and the glass card opens instead.
+
+## License
+
+MIT, see [LICENSE](LICENSE).
+
+The lock-screen cover's SkyLight calls (`Sources/LidFold/SkyLight.swift`) follow the approach in
+[Lakr233/SkyLightWindow](https://github.com/Lakr233/SkyLightWindow) (MIT). SkyLight is a private
+macOS framework: this part may stop working in a future macOS release, in which case LidFold
+simply skips the lock-screen effect.
